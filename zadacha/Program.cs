@@ -14,7 +14,7 @@ void FillStringArray(string[] stringArray)
     }
 }
 
-int Count(string[] stringArray)
+int CountElliment(string[] stringArray)
 {
     int countElliment = 0;
     for (int i = 0; i < stringArray.Length; i++)
@@ -42,27 +42,16 @@ string[] NewString(string[] stringArray,int count)
     return finish;
 }
 
-void PrintArray(string[] stringArray)
-{
-    Console.Write("{");
-     for (int i = 0;i<stringArray.Length;i++)
-    {
-        if (i<stringArray.Length-1)
-        {
-            Console.Write($"{stringArray[i]}, ");
-        }
-        else Console.Write($"{stringArray[i]}");
-    }
-    Console.Write("}");
-}
-//string[] str = new string [4] {"Hello", "2", "world", ":-)"};
 
 
 Console.Clear();
 int count = InNumber("Введите количество элементов массива:");
 string[] strArray = new string[count];
 FillStringArray(strArray);
-int newCount = Count(strArray);
+int newCount = CountElliment(strArray);
 string[] rezult = NewString(strArray, newCount);
-PrintArray(rezult);
+System.Console.WriteLine();
+System.Console.WriteLine($"[{String.Join(",", strArray)}]");
+System.Console.WriteLine();
+System.Console.WriteLine($"Новый массив из строк, длина которых не более 3 символов: [{String.Join(",", rezult)}]");
 
